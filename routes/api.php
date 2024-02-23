@@ -1,6 +1,6 @@
 <?php
 
-use App\Application\Http\Controllers\ProController;
+use App\Http\Controllers\ProController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
