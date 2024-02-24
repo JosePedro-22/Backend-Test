@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\ScorerInterface;
+use App\Services\ScorerInterface;
 use App\Services\ScorerService;
 use Illuminate\Support\ServiceProvider;
 

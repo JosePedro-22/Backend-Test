@@ -4,26 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProFormRequest;
 use App\Http\Resources\SummaryDataResource;
-use App\Repositories\ScorerInterface;
+use App\Services\ScorerInterface;
+use Illuminate\Http\JsonResponse;
 use Throwable;
 
 class ProController extends Controller
 {
-    private ScorerInterface $scorer;
 
-    public function __construct(ScorerInterface $scorer)
+    public function __construct(
+        private readonly ScorerInterface $scorer
+    )
     {
-        $this->scorer = $scorer;
     }
 
     /**
      * @throws Throwable
      */
-    public function selectProject(ProFormRequest $request): SummaryDataResource
+    public function selectProject(ProFormRequest $request): JsonResponse
     {
         try {
-            return $this->scorer->searchingForSummaryData($request->validated());
-        }catch (Throwable $throwable){
+            $response = $this->scorer->searchingForSummaryData($request->validated());
+            return (new SummaryDataResource($response))->response();
+        } catch (Throwable $throwable) {
             $this->badRequestResponse($throwable);
         }
     }
