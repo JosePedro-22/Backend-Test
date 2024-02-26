@@ -33,6 +33,10 @@ cd Backend-Test
 ```
 composer install
 ```
+4. starting project:
+```
+php artisan serve
+```
 
 ### Use postman to test the api
 
