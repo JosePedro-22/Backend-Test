@@ -47,7 +47,6 @@ trait Score
 
         else if ($writing_score > 0.7) $score += 2;
 
-//        if ($referential_code == env("TOKEN")) $score += 1;
         if ($referential_code == 'token1234') $score += 1;
 
         return $score;
