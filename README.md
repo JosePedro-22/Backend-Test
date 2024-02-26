@@ -18,7 +18,7 @@ What things do you need to install the software and how do you install it?
 
 |Technologies    |PHP                            |Composer                     |
 |----------------|-------------------------------|-----------------------------|
-|Version         |`8.3.1`                        |`2.6.6`                      |
+|Version         |`^8.1`                        |`2.6.6`                      |
 
 ### 🔧 Installation
 1. Clone the repository:
